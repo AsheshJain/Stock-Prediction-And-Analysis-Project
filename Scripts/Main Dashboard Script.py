@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
+# In[ ]:
 
 
 import dash
@@ -77,7 +77,7 @@ valid['Predictions']=closing_price
 
 
 
-df= pd.read_csv(r'C:\Users\pc\Downloads\archive\NIFTY50_all.csv')
+df= pd.read_csv('https://github.com/AsheshJain/Stock-Prediction-Project-Files/blob/8711c3d8d547881c7e32028cf2cbad3e834084f1/Data%20Sets/NIFTY50_all.csv?raw=true')
 df['Symbol']=df['Symbol'].replace(['MUNDRAPORT','UTIBANK','BAJAUTOFIN','BHARTI','HEROHONDA','HINDALC0','HINDLEVER','INFOSYSTCH','JSWSTL','KOTAKMAH','TELCO','TISCO','SESAGOA','SSLT','ZEETELE'],['ADANIPORTS','AXISBANK','BAJFINANCE','BHARTIARTL','HEROMOTOCO','HINDALCO','HINDUNILVR','INFY','JSWSTEEL','KOTAKBANK','TATAMOTORS','TATASTEEL','VEDL','VEDL','ZEEL'])
 
 
@@ -95,8 +95,8 @@ app.layout = html.Div([
 					figure={
 						"data":[
 							go.Scatter(
-								x=train.index,
-								y=valid["Close"],
+								x=new_data.index,
+								y=new_data["Close"],
 								mode='markers'
 							)
 
