@@ -40,8 +40,8 @@ new_data.drop("Date",axis=1,inplace=True)
 
 dataset=new_data.values
 
-train=dataset[0:987,:]
-valid=dataset[987:,:]
+train=dataset[0:100,:]
+valid=dataset[100:,:]
 
 scaler=MinMaxScaler(feature_range=(0,1))
 scaled_data=scaler.fit_transform(dataset)
@@ -71,8 +71,8 @@ X_test=np.reshape(X_test,(X_test.shape[0],X_test.shape[1],1))
 closing_price=model.predict(X_test)
 closing_price=scaler.inverse_transform(closing_price)
 
-train=new_data[:987]
-valid=new_data[987:]
+train=new_data[:100]
+valid=new_data[100:]
 valid['Predictions']=closing_price
 
 
